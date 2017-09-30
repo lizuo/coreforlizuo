@@ -11,6 +11,8 @@ using Microsoft.Extensions.PlatformAbstractions;
 using System.IO;
 using Swashbuckle.AspNetCore.Swagger;
 using coreforzhihu.command;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 namespace coreforzhihu
 {
@@ -40,7 +42,17 @@ namespace coreforzhihu
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
 
-            services.AddMvc();
+            services.AddMvc().AddJsonOptions(options =>
+            {
+                //忽略循环引用
+                options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+                //不使用驼峰样式的key
+                options.SerializerSettings.ContractResolver = new DefaultContractResolver();
+                //设置时间格式
+                options.SerializerSettings.DateFormatString = "yyyy-MM-dd";
+            });
+
+
             //描述信息
             services.AddSwaggerGen(c => {
                 c.SwaggerDoc("v1", 
@@ -73,9 +85,7 @@ namespace coreforzhihu
 
             app.UseMvc(routes =>
             {
-                //routes.Routes.Add(new LegacyRoute(
-                //    "/Home/Index.cshtml",
-                //    "/old/mvc3"));
+                
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");

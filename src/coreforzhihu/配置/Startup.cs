@@ -10,9 +10,10 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.PlatformAbstractions;
 using System.IO;
 using Swashbuckle.AspNetCore.Swagger;
-using coreforzhihu.command;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using Microsoft.EntityFrameworkCore;
+using coreforzhihu.DAL; 
 
 namespace coreforzhihu
 {
@@ -42,8 +43,12 @@ namespace coreforzhihu
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
 
+            //DbContsxt注入依赖
+            services.AddDbContext<coreforzhihuContext>(options =>options.UseSqlServer(Configuration.GetConnectionString("Str")));
+           
+            
             services.AddMvc().AddJsonOptions(options =>
-            {
+             {
                 //忽略循环引用
                 options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
                 //不使用驼峰样式的key
@@ -72,6 +77,8 @@ namespace coreforzhihu
             app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "DemoAPI V1"); });
             app.UseStaticFiles();
 
+            //添加数据库连接
+            
 
             if (env.IsDevelopment())
             {

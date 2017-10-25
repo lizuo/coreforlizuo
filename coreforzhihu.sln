@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "coreforzhihu", "src\coreforzhihu\coreforzhihu.xproj", "{1B82C476-1EAD-4896-9CF9-77B209DF9A73}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "coreforzhihu.DAL", "src\coreforlizuo.DAL\coreforzhihu.DAL.xproj", "{74E76A1C-67A5-48BA-9E6C-9D65ABED8BD2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,11 +24,16 @@ Global
 		{1B82C476-1EAD-4896-9CF9-77B209DF9A73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B82C476-1EAD-4896-9CF9-77B209DF9A73}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B82C476-1EAD-4896-9CF9-77B209DF9A73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74E76A1C-67A5-48BA-9E6C-9D65ABED8BD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74E76A1C-67A5-48BA-9E6C-9D65ABED8BD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74E76A1C-67A5-48BA-9E6C-9D65ABED8BD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74E76A1C-67A5-48BA-9E6C-9D65ABED8BD2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{1B82C476-1EAD-4896-9CF9-77B209DF9A73} = {451E98DF-7427-4F51-966C-B40119AD4EC6}
+		{74E76A1C-67A5-48BA-9E6C-9D65ABED8BD2} = {451E98DF-7427-4F51-966C-B40119AD4EC6}
 	EndGlobalSection
 EndGlobal

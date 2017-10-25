@@ -11,6 +11,9 @@ namespace coreforzhihu.DAL
         public coreforzhihuContext(DbContextOptions<coreforzhihuContext>options ) : base(options) { }
        // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
        //=> optionsBuilder.UseSqlServer(_connectionString);
+
+
+        //
     }
 }
 

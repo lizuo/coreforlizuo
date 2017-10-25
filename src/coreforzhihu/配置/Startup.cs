@@ -77,9 +77,6 @@ namespace coreforzhihu
             app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "DemoAPI V1"); });
             app.UseStaticFiles();
 
-            //添加数据库连接
-            
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

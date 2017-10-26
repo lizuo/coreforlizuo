@@ -1,0 +1,24 @@
+﻿@{ 
+    ViewBag["Title"] = "测试";
+}
+<script type="text/javascript">
+    $("#test").click(function(){
+        $.ajax({
+            type: 'post',
+            url: '/User/AddUser',
+            success: function (date) {
+                alert(date);
+
+            },
+            error:function (){
+
+                alert("失败！");
+            }
+
+
+        })
+    })
+</script>
+<div>
+    <button id="test">测试</button>
+</div>
